@@ -7,7 +7,13 @@ import { ChatMessages } from "@/components/chat-messages"
 import { useAppDispatch, useAppSelector } from "@/lib/hooks"
 import { addMessage, createChat, setCurrentChat } from "@/lib/chat-slice"
 
-export default function ChatPage({ params }: { params: { id: string } }) {
+interface ChatPageProps {
+  params: {
+    id: string;
+  };
+}
+
+export default function ChatPage({ params }: ChatPageProps) {
   const router: any = useRouter()
   const searchParams = useSearchParams()
   const dispatch = useAppDispatch()

@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import localFont from "next/font/local"
+// import localFont from "next/font/local"
 import "./globals.css"
 import { cn } from "@/lib/utils"
 import { Providers } from "./providers"
@@ -8,31 +8,31 @@ import { Providers } from "./providers"
 import { SiteHeader } from "@/components/site-header"
 import { ChatSidebar } from "@/components/chat-sidebar"
 
-const tajawal = localFont({
-  src: [
-    {
-      path: "./fonts/Tajawal-Regular.ttf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "./fonts/Tajawal-Medium.ttf",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "./fonts/Tajawal-Bold.ttf",
-      weight: "700",
-      style: "normal",
-    },
-    {
-      path: "./fonts/Tajawal-Black.ttf",
-      weight: "900",
-      style: "normal",
-    },
-  ],
-  variable: "--font-tajawal",
-})
+// const tajawal = localFont({
+//   src: [
+//     {
+//       path: "./fonts/Tajawal-Regular.ttf",
+//       weight: "400",
+//       style: "normal",
+//     },
+//     {
+//       path: "./fonts/Tajawal-Medium.ttf",
+//       weight: "500",
+//       style: "normal",
+//     },
+//     {
+//       path: "./fonts/Tajawal-Bold.ttf",
+//       weight: "700",
+//       style: "normal",
+//     },
+//     {
+//       path: "./fonts/Tajawal-Black.ttf",
+//       weight: "900",
+//       style: "normal",
+//     },
+//   ],
+//   variable: "--font-tajawal",
+// })
 
 export const metadata: Metadata = {
   title: "CODOC - المساعد الطبي الذكي",
@@ -46,7 +46,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ar" dir="rtl">
-      <body className={cn("min-h-screen bg-background font-sans antialiased", tajawal.variable, "font-tajawal")}>
+      <body className={cn("min-h-screen bg-background font-sans antialiased",
+      //  tajawal.variable,
+         "font-tajawal")}>
         <Providers>
           <div className="flex h-screen flex-col bg-background">
             <SiteHeader />
