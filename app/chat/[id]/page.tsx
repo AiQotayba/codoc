@@ -26,8 +26,8 @@ export default function ChatPage({ params }: any) {
   const state: any = useAppSelector((state) => state)
 
   // الحصول على الدردشة الحالية من Redux
-  const currentChat = useAppSelector((state) => state.chat.chats.find((chat) => chat.id === params.id))
-console.log(currentChat)
+  const currentChat = useAppSelector((state) => state.chat.chats.find((chat) => chat.id === params?.id))
+  console.log(currentChat)
   const handleSubmit = useCallback(
     async (message: string) => {
       if (!message.trim() || loading || !currentChat?.id) return
@@ -46,26 +46,26 @@ console.log(currentChat)
         )
 
         //      محاكاة تأخير المعالجة (مثال)
-      //        await new Promise((resolve) => setTimeout(resolve, 30000));
+        //        await new Promise((resolve) => setTimeout(resolve, 30000));
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 60000 * 3);
-    const API_URL ="/api/chat"//"https://ai_agent_medai.syrianserver.us/process_medical_case"
+        const API_URL = "/api/chat"//"https://ai_agent_medai.syrianserver.us/process_medical_case"
 
-          const response = await fetch(API_URL, {
-            method: "POST",
-  //mode: 'no-cors',
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({topic: message }),
-            signal: controller.signal // ربط مع إشارة الإلغاء
-          });
+        const response = await fetch(API_URL, {
+          method: "POST",
+          //mode: 'no-cors',
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ topic: message }),
+          signal: controller.signal // ربط مع إشارة الإلغاء
+        });
 
-          clearTimeout(timeoutId); // إلغاء المؤقت إذا اكتمل الطلب بنجاح
+        clearTimeout(timeoutId); // إلغاء المؤقت إذا اكتمل الطلب بنجاح
 
-          if (!response.ok) {
-            throw new Error("Failed to fetch response");
-          }
+        if (!response.ok) {
+          throw new Error("Failed to fetch response");
+        }
 
-        const data = await response.json(); 
+        const data = await response.json();
         console.log(data)
         if (!data || (typeof data === "object" && Object.keys(data).length === 0)) {
           throw new Error("Invalid response data")
@@ -148,8 +148,8 @@ console.log(currentChat)
       console.error("Error in handleNewChat:", error)
       setError(error instanceof Error ? error.message : "Failed to create new chat")
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [params.id, dispatch, router, handleSubmit, initialQuestion, shouldAutoSend, currentChat])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [params?.id, dispatch, router, handleSubmit, initialQuestion, shouldAutoSend, currentChat])
 
   useEffect(() => {
     let mounted = true
@@ -174,10 +174,10 @@ console.log(currentChat)
 
   // تعيين الدردشة الحالية في Redux عند التركيب
   useEffect(() => {
-    if (params.id !== "new") {
-      dispatch(setCurrentChat(params.id))
+    if (params?.id !== "new") {
+      dispatch(setCurrentChat(params?.id))
     }
-  }, [dispatch, params.id])
+  }, [dispatch, params?.id])
 
   if (!params.id) {
     return <div className="p-4 text-red-500">Invalid chat ID</div>

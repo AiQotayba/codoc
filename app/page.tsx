@@ -14,25 +14,25 @@ const actionButtons = [
     icon: Stethoscope,
     label: "تشخيص الحالة",
     color: "text-primary",
-    bgColor: "bg-primary/10",
+    bgColor: "bg-[#00b2b3]/10",
   },
   {
     icon: FileText,
     label: "تلخيص التقارير",
     color: "text-primary",
-    bgColor: "bg-primary/10",
+    bgColor: "bg-[#00b2b3]/10",
   },
   {
     icon: ListChecks,
     label: "خطة العلاج",
     color: "text-primary",
-    bgColor: "bg-primary/10",
+    bgColor: "bg-[#00b2b3]/10",
   },
   {
     icon: Lightbulb,
     label: "استشارة طبية",
     color: "text-primary",
-    bgColor: "bg-primary/10",
+    bgColor: "bg-[#00b2b3]/10",
   },
 ]
 

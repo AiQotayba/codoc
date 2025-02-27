@@ -118,7 +118,7 @@ function SidebarContent({ chats, pathname, onClose, onDeleteChat, onUpdateTitle 
             <div className="text-center py-8 text-muted-foreground">لا توجد محادثات</div>
           ) : (
             <div className="space-y-1">
-              {chats.map((chat) => (
+              {chats?.map((chat) => (
                 <div
                   key={chat.id}
                   className={cn(

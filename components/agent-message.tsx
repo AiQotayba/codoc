@@ -182,9 +182,9 @@ export function AgentMessage({ data }: AgentMessageProps) {
         )}
 
         {/* Final Output (Always Visible) */}
-        {!isProcessing && data.final_report_ar && (
+        {!isProcessing && data?.final_report_ar && (
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2" dir="rtl">
               <div className={cn("rounded-md p-1.5", "bg-green-500/10")}>
                 <CheckCircle2 className={cn("h-4 w-4", "text-green-500")} />
               </div>
@@ -252,7 +252,7 @@ export function AgentMessage({ data }: AgentMessageProps) {
               const Icon = agent.icon
               return (
                 <div key={agent.id} className="space-y-2">
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2" dir={"rtl"}>
                     <div className={cn("rounded-md p-1.5", agent.bgColor)}>
                       {React.createElement(Icon, { className: cn("h-4 w-4", agent.color) })}
                     </div>

@@ -1,57 +1,36 @@
-/** @type {import('tailwindcss').Config} */
+// tailwind.config.js
 module.exports = {
-  darkMode: ["class"],
-  content: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}", "*.{js,ts,jsx,tsx,mdx}"],
+  content: [
+    './app/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+  ],
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
+        background: '#ffffff', // White
+        foreground: '#141414', // Dark Gray
+        card: '#ffffff', // White
+        'card-foreground': '#141414', // Dark Gray
+        popover: '#ffffff', // White
+        'popover-foreground': '#141414', // Dark Gray
+        primary: '#00b4b4', // Teal
+        'primary-foreground': '#ffffff', // White
+        secondary: '#e0f7fa', // Light Teal
+        'secondary-foreground': '#141414', // Dark Gray
+        muted: '#e0f7fa', // Light Teal
+        'muted-foreground': '#666666', // Gray
+        accent: '#e0f7fa', // Light Teal
+        'accent-foreground': '#141414', // Dark Gray
+        destructive: '#ff4d4d', // Red
+        'destructive-foreground': '#ffffff', // White
+        border: '#e0e0e0', // Light Gray
+        input: '#e0e0e0', // Light Gray
+        ring: '#00b4b4', // Teal
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        radius: '0.75rem',
       },
     },
   },
-}
-
+  plugins: [],
+};

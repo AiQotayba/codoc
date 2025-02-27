@@ -28,7 +28,7 @@ export function MessageCard({ role, content }: MessageCardProps) {
 
   return (
     <div className="flex flex-row-reverse items-start gap-4 justify-start group">
-      <div className="flex-shrink-0">
+      <div className="flex-shrink-0" dir="rtl">
         <div
           className={cn(
             "w-10 h-10 rounded-full flex items-center justify-center shadow-sm transition-transform hover:scale-105",
@@ -38,7 +38,7 @@ export function MessageCard({ role, content }: MessageCardProps) {
           <Icon className={cn("h-5 w-5", isAssistant ? "text-primary" : "text-primary-foreground")} />
         </div>
       </div>
-      <div className="relative flex-1 max-w-[85%]">
+      <div className="relative flex-1 max-w-[85%]" dir="rtl">
         <Card
           className={cn(
             "p-5 transition-all duration-200 ease-in-out hover:shadow-md",
