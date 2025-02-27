@@ -49,7 +49,7 @@ console.log(currentChat)
       //        await new Promise((resolve) => setTimeout(resolve, 30000));
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 60000 * 3);
-    const API_URL = "https://cors-anywhere.herokuapp.com/https://ai_agent_medai.syrianserver.us/process_medical_case"
+    const API_URL = "https://ai_agent_medai.syrianserver.us/process_medical_case"
 
           const response = await fetch(API_URL, {
             method: "POST",
