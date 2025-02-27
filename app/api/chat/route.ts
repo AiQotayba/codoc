@@ -102,16 +102,16 @@ export async function POST(req: Request) {
 
   try {
     const body = await req.json()
-    const { message } = body
+    const { topic } = body
 
-    if (!message || typeof message !== "string") {
+    if (!topic || typeof topic !== "string") {
       return NextResponse.json({ error: "الرسالة غير صالحة" }, { status: 400, headers })
     }
 
-    // Use mock data while API is inaccessible
-    return NextResponse.json(mockResponse, { headers })
+    // // Use mock data while API is inaccessible
+    // return NextResponse.json(mockResponse, { headers })
 
-    /* Commented out until API is accessible
+    //  Commented out until API is accessible
     const API_URL = "https://ai_agent_medai.syrianserver.us/process_medical_case"
     const controller = new AbortController()
     const timeout = setTimeout(() => controller.abort(), 60000 * 5)
@@ -119,10 +119,10 @@ export async function POST(req: Request) {
     try {
       const response = await fetch(API_URL, {
         method: "POST",
-        headers: { 
+        headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({ topic: message }),
+        body: JSON.stringify({ topic }),
         signal: controller.signal
       })
 
@@ -143,7 +143,6 @@ export async function POST(req: Request) {
       clearTimeout(timeout)
       throw error
     }
-    */
   } catch (error) {
     console.error("Error:", error)
     return NextResponse.json(
