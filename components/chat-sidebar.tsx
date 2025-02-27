@@ -128,6 +128,8 @@ function SidebarContent({ chats, pathname, onClose, onDeleteChat, onUpdateTitle 
                     "hover:bg-accent/50",
                     pathname === `/chat/${chat.id}` && "bg-accent",
                   )}
+                  aria-label={chat.title}
+                  title={chat.title}
                 >
                   <Link
                     href={`/chat/${chat.id}`}
