@@ -74,14 +74,9 @@ export function ChatInput({ onSubmit, disabled, defaultValue = "" }: ChatInputPr
           )}
           size="lg"
         >
-          <Send className="h-4 w-4" />
+          <Send className="h-4 w-4 bg-white" />
         </Button>
       </div>
-
-      {/* Keyboard shortcut hint 
-      <div className="text-xs text-muted-foreground text-center">
-        اضغط {navigator.platform.includes("Mac") ? "⌘" : "Ctrl"} + Enter للإرسال
-      </div>*/}
     </form>
   )
 }
