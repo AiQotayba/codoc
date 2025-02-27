@@ -90,7 +90,17 @@ interface SidebarContentProps {
 
 function SidebarContent({ chats, pathname, onClose, onDeleteChat, onUpdateTitle }: SidebarContentProps) {
   return (
-    <div className="flex h-full flex-col">
+    <div className="flex h-full flex-col pt-14">
+
+      <div className="p-4">
+        <Link href="/" onClick={onClose}>
+          <Button className="w-full gap-2 h-10 text-base cursor-pointer" variant="outline">
+            <Plus className="h-5 w-5" />
+            محادثة جديدة
+          </Button>
+        </Link>
+      </div>
+
       <div className="px-4 py-3">
         <div className="flex items-center justify-between">
           <span className="font-semibold text-lg">المحادثات</span>
@@ -102,16 +112,7 @@ function SidebarContent({ chats, pathname, onClose, onDeleteChat, onUpdateTitle 
           )}
         </div>
       </div>
-
-      <div className="p-4">
-        <Link href="/" onClick={onClose}>
-          <Button className="w-full gap-2 h-10 text-base cursor-pointer" variant="outline">
-            <Plus className="h-5 w-5" />
-            محادثة جديدة
-          </Button>
-        </Link>
-      </div>
-
+      <hr className="mx-4" />
       <ScrollArea className="flex-1">
         <div className="p-2">
           {chats.length === 0 ? (

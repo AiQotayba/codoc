@@ -155,7 +155,7 @@ export function AgentMessage({ data }: AgentMessageProps) {
         {/* Processing Animation */}
         {isProcessing && (
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2" dir="rtl">
               {agents[currentAgent] && (
                 <>
                   <div className={cn("rounded-md p-1.5", agents[currentAgent].bgColor)}>
@@ -170,9 +170,9 @@ export function AgentMessage({ data }: AgentMessageProps) {
                 </>
               )}
             </div>
-            <div className="h-1 w-full bg-muted-foreground/10 rounded-full overflow-hidden">
+            <div className="h-1 w-full bg-muted-foreground/10 rounded-full overflow-hidden" dir="rtl">
               <div
-                className="h-full bg-primary transition-all duration-200"
+                className="h-full bg-[#00b2b3] transition-all duration-200"
                 style={{
                   width: `${((currentAgent + 1) / agents.length) * 100}%`,
                 }}

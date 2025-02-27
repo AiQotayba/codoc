@@ -77,12 +77,12 @@ export default function Home() {
             <Button
               key={i}
               variant="outline"
-              className="h-auto py-2 px-3 hover:bg-accent/50 group"
+              className="h-auto py-2 px-3 hover:bg-accent/50 cursor-pointer group"
               onClick={() => router.push(`/chat/new?q=${encodeURIComponent(button.label)}&autoSend=false`)}
             >
               <div className="flex items-center gap-3">
                 <div className={cn("p-1 rounded-md transition-all group-hover:scale-105", button.bgColor)}>
-                  <button.icon className={cn("h-3.5 w-3.5", button.color)} />
+                  <button.icon className={cn("h-3.5 w-3.5 text-[#00b2b3]")} />
                 </div>
                 <span className="text-xs">{button.label}</span>
               </div>
