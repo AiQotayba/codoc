@@ -113,12 +113,12 @@ function SidebarContent({ chats, pathname, onClose, onDeleteChat, onUpdateTitle 
         </div>
       </div>
       <hr className="mx-4" />
-      <ScrollArea className="flex-1">
+      <ScrollArea className="flex-1 ">
         <div className="p-2">
           {chats.length === 0 ? (
             <div className="text-center py-8 text-muted-foreground">لا توجد محادثات</div>
           ) : (
-            <div className="space-y-1">
+            <div className="space-y-1 max-w-[290px]">
               {chats?.map((chat) => (
                 <div
                   key={chat.id}
@@ -134,7 +134,7 @@ function SidebarContent({ chats, pathname, onClose, onDeleteChat, onUpdateTitle 
                     onClick={onClose}
                     className="truncate  flex flex-row items-center gap-3 py-1 w-full justify-end"
                   >
-                    <span className="truncate text-sm">{chat.title}</span>
+                    <span className="truncate text-sm" dir="rtl">{chat.title}</span>
                     <MessageCircle className="h-4 w-4 flex-shrink-0" />
                   </Link>
 
