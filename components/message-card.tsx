@@ -31,18 +31,18 @@ export function MessageCard({ role, content }: MessageCardProps) {
       <div className="flex-shrink-0" dir="rtl">
         <div
           className={cn(
-            "w-10 h-10 rounded-full flex items-center justify-center shadow-sm transition-transform hover:scale-105",
+            "w-10 h-10 rounded-full flex items-center border-2 border-solid border-[#e5e7eb] justify-center shadow-sm transition-transform hover:scale-105",
             isAssistant ? "bg-primary/10" : "bg-primary",
           )}
         >
-          <Icon className={cn("h-5 w-5", isAssistant ? "text-primary" : "text-primary-foreground")} />
+          <Icon className={cn("h-5 w-5", isAssistant ? "text-[#00b2b3]" : "text-[#00b2b3]-foreground")} />
         </div>
       </div>
       <div className="relative flex-1 max-w-[85%]" dir="rtl">
         <Card
           className={cn(
             "p-5 transition-all duration-200 ease-in-out hover:shadow-md",
-            isAssistant ? "bg-muted hover:bg-muted/90" : "bg-primary hover:bg-primary/90 text-primary-foreground",
+            isAssistant ? "bg-muted hover:bg-muted/90" : "bg-[#00b2b3] hover:bg-[#00b2b3]/90 text-white",
           )}
         >
           <div className="whitespace-pre-wrap leading-relaxed">{content}</div>

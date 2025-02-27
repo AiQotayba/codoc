@@ -67,7 +67,7 @@ export default function Home() {
               rows={3}
             />
             <Button type="submit" className="w-max px-4 mx-2 left-0 absolute mb-3 mt-[-60px]" size="lg">
-              <Send className="h-4 w-4" />
+              <Send className="h-4 w-4 text-white" />
             </Button>
           </form>
         </div>

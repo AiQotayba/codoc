@@ -105,7 +105,7 @@ function SidebarContent({ chats, pathname, onClose, onDeleteChat, onUpdateTitle 
 
       <div className="p-4">
         <Link href="/" onClick={onClose}>
-          <Button className="w-full gap-2 h-10 text-base" variant="outline">
+          <Button className="w-full gap-2 h-10 text-base cursor-pointer" variant="outline">
             <Plus className="h-5 w-5" />
             محادثة جديدة
           </Button>
@@ -131,7 +131,7 @@ function SidebarContent({ chats, pathname, onClose, onDeleteChat, onUpdateTitle 
                   <Link
                     href={`/chat/${chat.id}`}
                     onClick={onClose}
-                    className="truncate w flex items-center gap-3 py-1"
+                    className="truncate  flex flex-row items-center gap-3 py-1 w-full justify-end"
                   >
                     <span className="truncate text-sm">{chat.title}</span>
                     <MessageCircle className="h-4 w-4 flex-shrink-0" />

@@ -1,5 +1,27 @@
 @import "tailwindcss";
 
+:root {
+  --border: #e5e7eb;
+  --input: #ffffff;
+  --ring: #1e40af;
+  --background: #f3f4f6;
+  --foreground: #111827;
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  --secondary: #6b7280;
+  --secondary-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --muted: #9ca3af;
+  --muted-foreground: #6b7280;
+  --accent: #9333ea;
+  --accent-foreground: #ffffff;
+  --popover: #ffffff;
+  --popover-foreground: #111827;
+  --card: #ffffff;
+  --card-foreground: #111827;
+}
+
 @layer base {
   * {
     border-color: var(--border);
